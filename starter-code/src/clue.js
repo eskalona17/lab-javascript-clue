@@ -143,7 +143,7 @@ var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrM
             occupation: 'Retired football player'
         };
 
-        charactersArray.push(mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard);
+      //   charactersArray.push(mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrMustard);
 
 // Rooms' Collection
 
@@ -210,22 +210,21 @@ var charactersArray = [mrGreen, drOrchid, profPlum, missScarlet, mrsPeacock, mrM
   
 
 function randomSelector(array){
-
+   
    return array[Math.floor(Math.random() * array.length)];
     
 }
 
 function pickMistery (){
 
-   randomSelector(weaponsArray);
-   randomSelector(roomsArray);
-   randomSelector(charactersArray);
-
-   return[weaponsArray,roomsArray,charactersArray];
-
+   return[randomSelector(weaponsArray),randomSelector(roomsArray),randomSelector(charactersArray)];
+ 
 }
 
- function revealMistery (misteryEnvelope) {
 
+ function revealMistery (misteryEnvelope) {
+   
+   console.log(misteryEnvelope[0].weaponsArray.name);
+    return [misteryEnvelope[0].first_name + misteryEnvelope[0].last_name + 'killed Mr.Boddy using the '+ misteryEnvelope[1].weaponsArray.name + ' in the ' + misteryEnvelope[2].roomsArray.name +'!!!!'];
  }
 
